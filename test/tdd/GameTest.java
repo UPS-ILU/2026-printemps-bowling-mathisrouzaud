@@ -30,5 +30,19 @@ class GameTest {
 		}
 		assertEquals(20,game.score());
 	}
+//	Entrée : On roll 7, 3 puis
+//	4 et 17 fois 0
+	
+	@Test
+	void test_roll_spare() {
+		game.roll(7);
+		game.roll(3);
+		game.roll(4);
+		for(int i=0; i<17; i++) {
+			game.roll(0);
+		}
+		assertEquals(18, game.score());
+		
+	}
 
 }
